@@ -47,10 +47,6 @@ jobs:
           name: Build
           command: npm run build
 
-      - run:
-          name: Publish npm package
-          command:
-
   deploy:
     steps:
       - attach_workspace:
