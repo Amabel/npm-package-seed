@@ -43,29 +43,24 @@ jobs:
           name: Build
           command: npm run build
 
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          command: |
+            if [[ "${CIRCLE_TAG}" == "v"* ]]; then
+              echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+            fi
       - run:
           name: Publish package
-          command: npm publish
+          command: |
+            if [[ "${CIRCLE_TAG}" == "v"* ]]; then
+              npm publish
+            fi
 
 workflows:
   version: 2
   deploy:
     jobs:
       - build:
-          filters:
-            tags:
-              only: /^v\d+.\d+.\d+$/
-      - deploy:
-          requires:
-            - build
           filters:
             tags:
               only: /^v\d+.\d+.\d+$/
