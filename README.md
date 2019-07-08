@@ -1,8 +1,8 @@
-# Npm Package Template
-
 <div align="center">
+  <h1>Npm Package Template</h1>
+  <p>A quick start to build a node package.</p>
   <a href="https://circleci.com/gh/Amabel/npm-package-template">
-    <img src="https://img.shields.io/circleci/build/github/amabel/npm-package-template.svg?style=for-the-badge" alt="Build">
+    <img src="https://img.shields.io/circleci/build/github/Amabel/npm-package-template.svg?style=for-the-badge" alt="Build">
   </a>
   <a href="#">
     <img src="https://img.shields.io/npm/v/npm-package-template.svg?style=for-the-badge" alt="npm Downloads per Month">
@@ -15,9 +15,9 @@
   <br><br>
 </div>
 
-A quick start to build a node package.
+## Usage
 
-## Relace fields below in `package.json`
+Relace fields below in `package.json`:
 
 - `name`
 - `description`
