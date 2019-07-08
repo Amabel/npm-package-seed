@@ -1,0 +1,50 @@
+{
+  "name": "npm-package-template",
+  "version": "1.0.0",
+  "description": "The description of your npm package.",
+  "main": "dist/umd/index.js",
+  "unpkg": "dist/umd/index.min.js",
+  "scripts": {
+    "lint": "standard src/**/*.js src/*.js",
+    "lint:fix": "standard src/**/*.js src/*.js --fix",
+    "build": "npm run build:css && npm run build:js && npm run compress",
+    "build:css": "postcss src/styles/index.scss -o dist/index.css --no-map",
+    "build:js": "rollup -c",
+    "clean": "rimraf dist coverage",
+    "compress": "npm run compress:css && npm run compress:js",
+    "compress:css": "postcss dist/index.css -u cssnano -o dist/index.min.css --no-map",
+    "compress:js": "uglifyjs dist/umd/index.js -o dist/umd/index.min.js -c -m --comments /^!/",
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "keyword",
+    "another keyword"
+  ],
+  "author": "Amabel",
+  "homepage": "",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "change-case": "^3.1.0",
+    "create-banner": "^1.0.0",
+    "cssnano": "^4.1.10",
+    "jest": "^24.8.0",
+    "postcss-cli": "^6.1.2",
+    "postcss-header": "^1.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-url": "^8.0.0",
+    "precss": "^4.0.0",
+    "rollup": "^1.16.6",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-json": "^4.0.0",
+    "standard": "^12.0.1",
+    "uglify-js": "^3.6.0"
+  },
+  "dependencies": {}
+}
