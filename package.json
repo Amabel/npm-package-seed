@@ -5,8 +5,12 @@
   "main": "dist/umd/index.js",
   "unpkg": "dist/umd/index.min.js",
   "scripts": {
-    "lint": "standard src/**/*.js src/*.js",
-    "lint:fix": "standard src/**/*.js src/*.js --fix",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint src/**/*.{scss,css,html}",
+    "lint:js": "standard src/**/*.js src/*.js",
+    "lint:fix": "npm run lint:css:fix && npm run lint:js:fix",
+    "lint:css:fix": "stylelint src/**/*.{scss,css,html} --fix",
+    "lint:js:fix": "standard src/**/*.js src/*.js --fix",
     "build": "npm run build:css && npm run build:js && npm run compress",
     "build:css": "postcss src/styles/index.scss -o dist/index.css --no-map",
     "build:js": "rollup -c",
@@ -17,15 +21,34 @@
     "test": "jest --coverage"
   },
   "keywords": [
-    "keyword",
-    "another keyword"
+    "template",
+    "node package template"
   ],
   "author": "Amabel",
-  "homepage": "",
+  "homepage": "https://github.com/Amabel/npm-package-template",
   "license": "MIT",
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/index.js": [
+      "standard  --fix",
+      "git add"
+    ],
+    "src/**/*.js": [
+      "standard --fix",
+      "git add"
+    ],
+    "src/**/*.{scss,css,html}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
@@ -33,7 +56,9 @@
     "change-case": "^3.1.0",
     "create-banner": "^1.0.0",
     "cssnano": "^4.1.10",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
+    "lint-staged": "^9.1.0",
     "postcss-cli": "^6.1.2",
     "postcss-header": "^1.0.0",
     "postcss-import": "^12.0.1",
