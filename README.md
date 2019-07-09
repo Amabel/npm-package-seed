@@ -17,13 +17,14 @@
 
 ## Usage
 
-Relace fields below in `package.json`:
+Replace the following fields in `package.json`:
 
 - `name`
 - `description`
 - `keywords`
 - `author`
 - `homepage`
+- `repository`
 
 ## License
 
