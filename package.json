@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The description of your npm package.",
   "main": "dist/umd/index.js",
+  "module": "dist/esm/index.js",
   "unpkg": "dist/umd/index.min.js",
   "scripts": {
     "lint": "npm run lint:css && npm run lint:js",
@@ -24,6 +25,10 @@
     "template",
     "node package template"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "git+https://github.com/Amabel/npm-package-template"
+  },
   "author": "Amabel",
   "homepage": "https://github.com/Amabel/npm-package-template",
   "license": "MIT",
