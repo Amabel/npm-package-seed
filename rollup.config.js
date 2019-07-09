@@ -18,8 +18,13 @@ module.exports = {
     {
       banner,
       name,
-      file: `dist/umd/index.js`,
+      file: 'dist/umd/index.js',
       format: 'umd',
+    },
+    {
+      banner,
+      file: 'dist/esm/index.js',
+      format: 'esm',
     }
   ],
   plugins: [
