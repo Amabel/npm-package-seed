@@ -17,7 +17,7 @@
 
 ## Usage
 
-Replace all `npm-package-template` in `package.json` with your package name in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#cite_ref-28).
+Replace all `'npm-package-template'` in `package.json` with your package name in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#cite_ref-28).
 
 Also update the following fields in `package.json`:
 
@@ -27,7 +27,6 @@ Also update the following fields in `package.json`:
 - `repository`
 - `author`
 - `homepage`
-- `repository`
 
 ## Development
 
