@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Npm Package Template</h1>
-  <p>A quick start to build a node package.</p>
+  <p>A quick start to build node packages.</p>
   <a href="https://circleci.com/gh/Amabel/npm-package-template">
     <img src="https://img.shields.io/circleci/build/github/Amabel/npm-package-template.svg?style=for-the-badge" alt="Build">
   </a>
@@ -17,14 +17,31 @@
 
 ## Usage
 
-Replace the following fields in `package.json`:
+Replace all `npm-package-template` in `package.json` with your package name in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#cite_ref-28).
+
+Also update the following fields in `package.json`:
 
 - `name`
 - `description`
 - `keywords`
+- `repository`
 - `author`
 - `homepage`
 - `repository`
+
+## Development
+
+### Build
+
+```
+npm install
+
+npm run build
+
+npm run lint
+
+npm run lint:fix
+```
 
 ## License
 

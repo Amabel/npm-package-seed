@@ -1,4 +1,4 @@
-const rollupConfig = require('./rollup.config');
+const banner = require('./shared/banner');
 
 module.exports = {
   plugins: {
@@ -14,7 +14,7 @@ module.exports = {
       url: 'inline',
     },
     'postcss-header': {
-      header: rollupConfig.output[0].banner,
+      header: banner,
     },
   },
 };
