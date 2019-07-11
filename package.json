@@ -6,6 +6,7 @@
   "module": "dist/esm/npm-package-template.js",
   "unpkg": "dist/umd/npm-package-template.min.js",
   "scripts": {
+    "start": "babel-node src/index.js --presets @babel/preset-env",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint src/**/*.{scss,css,html}",
     "lint:js": "standard src/**/*.js src/*.js",
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "change-case": "^3.1.0",
