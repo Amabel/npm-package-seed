@@ -58,7 +58,7 @@
     "@babel/core": "^7.5.0",
     "@babel/node": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
     "change-case": "^3.1.0",
     "create-banner": "^1.0.0",
     "cssnano": "^4.1.10",
