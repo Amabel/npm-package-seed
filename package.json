@@ -9,10 +9,10 @@
     "start": "babel-node src/index.js --presets @babel/preset-env",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint src/**/*.{scss,css,html}",
-    "lint:js": "standard src/**/*.js src/*.js",
+    "lint:js": "standard *.js src/**/*.js src/*.js",
     "lint:fix": "npm run lint:css:fix && npm run lint:js:fix",
     "lint:css:fix": "stylelint src/**/*.{scss,css,html} --fix",
-    "lint:js:fix": "standard src/**/*.js src/*.js --fix",
+    "lint:js:fix": "standard *.js src/**/*.js src/*.js --fix",
     "build": "npm run clean && npm run build:css && npm run build:js && npm run compress:css",
     "build:css": "postcss src/styles/index.scss -o dist/npm-package-template.css --no-map",
     "compress:css": "postcss dist/npm-package-template.css -u cssnano -o dist/npm-package-template.min.css --no-map",
@@ -38,6 +38,14 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "standard": {
+    "env": [ "jest" ]
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./test/setup.js"
+    ]
   },
   "lint-staged": {
     "src/index.js": [

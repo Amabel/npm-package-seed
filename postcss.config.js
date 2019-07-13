@@ -1,4 +1,4 @@
-const banner = require('./shared/banner');
+const banner = require('./shared/banner')
 
 module.exports = {
   plugins: {
@@ -7,14 +7,14 @@ module.exports = {
     'postcss-preset-env': {
       stage: 3,
       features: {
-        'nesting-rules': true,
-      },
+        'nesting-rules': true
+      }
     },
     'postcss-url': {
-      url: 'inline',
+      url: 'inline'
     },
     'postcss-header': {
-      header: banner,
-    },
-  },
-};
+      header: banner
+    }
+  }
+}
