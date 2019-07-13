@@ -42,7 +42,7 @@ export default [
       banner,
       name,
       file: pkg.module,
-      format: 'umd'
+      format: 'esm'
     },
     plugins: [babel(getBabelOptions({ useESModules: true }))]
   }
