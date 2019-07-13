@@ -1,1 +1,3 @@
-describe('mock', () => {})
+xit('is a mock', () => {
+  return undefined
+})
