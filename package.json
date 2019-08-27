@@ -1,10 +1,10 @@
 {
-  "name": "npm-package-template",
+  "name": "npm-package-seed",
   "version": "1.0.0",
   "description": "The description of your npm package.",
-  "main": "dist/umd/npm-package-template.js",
-  "module": "dist/esm/npm-package-template.js",
-  "unpkg": "dist/umd/npm-package-template.min.js",
+  "main": "dist/umd/npm-package-seed.js",
+  "module": "dist/esm/npm-package-seed.js",
+  "unpkg": "dist/umd/npm-package-seed.min.js",
   "scripts": {
     "start": "babel-node src/index.js --presets @babel/preset-env",
     "lint": "npm run lint:css && npm run lint:js",
@@ -14,8 +14,8 @@
     "lint:css:fix": "stylelint src/**/*.{scss,css,html} --fix",
     "lint:js:fix": "standard *.js src/**/*.js src/*.js --fix",
     "build": "npm run clean && npm run build:css && npm run build:js && npm run compress:css",
-    "build:css": "postcss src/styles/index.scss -o dist/npm-package-template.css --no-map",
-    "compress:css": "postcss dist/npm-package-template.css -u cssnano -o dist/npm-package-template.min.css --no-map",
+    "build:css": "postcss src/styles/index.scss -o dist/npm-package-seed.css --no-map",
+    "compress:css": "postcss dist/npm-package-seed.css -u cssnano -o dist/npm-package-seed.min.css --no-map",
     "build:js": "rollup -c",
     "clean": "rimraf dist coverage",
     "test": "jest --coverage"
@@ -26,10 +26,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Amabel/npm-package-template"
+    "url": "git+https://github.com/Amabel/npm-package-seed"
   },
   "author": "Amabel",
-  "homepage": "https://github.com/Amabel/npm-package-template",
+  "homepage": "https://github.com/Amabel/npm-package-seed",
   "license": "MIT",
   "files": [
     "dist"
